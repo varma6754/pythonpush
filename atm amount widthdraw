@@ -1,0 +1,32 @@
+'''Requirements:
+1. Display the current account balance.
+2. Ask the customer to enter the withdrawal amount.
+3. If the withdrawal amount is greater than the available balance, display "Insufficient Balance".
+4. If the withdrawal amount is valid, deduct it from the account balance.
+5. Ask the customer whether they want to continue withdrawing.
+6. Continue the process until the customer chooses to stop.
+7. Finally, display the remaining account balance.
+Initial balance: ₹10,000'''
+
+initial_balance = 10000
+pwd="1234" 
+pin= input("enter the pin: ")
+if pin==pwd:
+    while True:
+        widthdraw_amount=int(input("widthdrawal amount: "))
+        
+        if widthdraw_amount > initial_balance:
+            print("Insufficient Balance")
+        else:
+            initial_balance = initial_balance - widthdraw_amount
+            print("Remaining Balance:", initial_balance)
+
+        repeat=input("Do you want to continue? yes/no:  ")
+        if repeat == 'yes':
+            continue
+        else:
+            if repeat == 'no':
+                break
+    print("Final Balance:", initial_balance)
+else:
+    print("invalid pin")
